@@ -1,11 +1,10 @@
 const app = new Vue({
-    el:'#root',
+    el: '#root',
 
-    data:{
-        list:[
-            {
-                activity:'dormire',
-                check:false
+    data: {
+        list: [{
+                activity: 'dormire',
+                check: false
             },
             {
                 activity: 'mangiare',
@@ -27,22 +26,38 @@ const app = new Vue({
                 activity: 'dosaltare',
                 check: false
             },
-           
-        ],
-        counter:0,
-        
-        done:'done'
-    },
-    methods:{
-        checked:function(){
-            if (this.check == false){
-             this.check = true;
-            }else{
-                   this.check = false;
-            }
-            console.log(this.check)
-    }
-  },
-})
 
+        ],
+        done: 'done',
+        addTodo: null
+    },
+    methods: {
+        checked: function (index) {
+            if (this.list[index].check == false) {
+                this.list[index].check = true;
+            } else {
+                this.list[index].check = false
+            }
+            console.log(this.list[index].check)
+        },
+        remove: function (index) {
+            this.list.splice(index, 1)
+        },
+
+        addActivity: function(){
+            if(this.addTodo != ''){
+                 this.list.push({
+                     activity: this.addTodo,
+                     check: false
+                 })
+            }
+            this.addTodo = '';
+           
+            
+        }
+       
+
+
+    },
+})
 

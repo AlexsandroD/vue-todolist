@@ -7,6 +7,12 @@
 
 /* commons */
 
+
+body{
+    font-family: 'Montserrat',
+    sans-serif;
+}
+
 li{
     list-style: none;
     display: flex;
@@ -15,8 +21,8 @@ li{
 }
 
 span{
-    display: flex;
-    align-items: center;
+text-align: left;
+width: 100%;
 }
 input{
     margin: 0 5px;
@@ -25,7 +31,19 @@ input{
 
 
 /* header */
-
+header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    margin:30px auto;
+    width: 500px;
+    object-fit: contain;
+    
+}
 
 /* main */
 
@@ -37,7 +55,30 @@ input{
 }
 .elementi{
     width: 50%;
-    margin: auto;
+    margin: 5px auto;
+    background-color: lightgray;
+    border-bottom: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.elementi i{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.elementi i:active{
+    transform: scale(0.97);
+}
+.elementi:nth-child(odd){
+    background-color: #00E165;
+}
+
+.elementi:last-child{
+    border-bottom: none;
+    margin-bottom: 100px;
 }
 
 
@@ -45,3 +86,190 @@ input{
     text-decoration: line-through;
 }
 
+
+.addTodo{
+    margin: 10px 0;
+}
+
+.text{
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #00E165;
+    font-weight: 600;
+}
+
+  /* check box styling secyion  */
+.control {
+    font-family: arial;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.control_indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border: 0px solid #000000;
+    border-radius:50%;
+}
+
+.control:hover input~.control_indicator,
+.control input:focus~.control_indicator {
+    background: #cccccc;
+}
+
+.control input:checked~.control_indicator {
+    background: #00E165;
+}
+
+/* .control:hover input:not([disabled]):checked~.control_indicator,
+.control input:checked:focus~.control_indicator {
+    background: #0e6647;
+} */
+
+.control input:disabled~.control_indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.control input:checked~.control_indicator:after {
+    display: block;
+}
+
+.control-checkbox .control_indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+
+
+.control-checkbox .control_indicator::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-left: -1.3rem;
+    margin-top: -1.3rem;
+    background: #2aa1c0;
+    border-radius: 3rem;
+    opacity: 0.6;
+    z-index: 99999;
+    transform: scale(0);
+}
+
+@keyframes s-ripple {
+    0% {
+        transform: scale(0);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+@keyframes s-ripple-dup {
+    0% {
+        transform: scale(0);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+.control-checkbox input+.control_indicator::before {
+    animation: s-ripple 250ms ease-out;
+}
+
+.control-checkbox input:checked+.control_indicator::before {
+    animation-name: s-ripple-dup;
+}
+
+/* input box section  */
+
+.css-input {
+    padding: 5px;
+    font-size: 16px;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 0px;
+    box-shadow: 0px 0px 5px rgba(66, 66, 66, .0);
+    text-shadow: 0px 0px 5px rgba(66, 66, 66, .0);
+}
+
+.css-input:focus {
+    outline: none;
+}
+
+
+/* button styling  */
+
+.myButton {
+    background-color: #44c767;
+    border-radius: 28px;
+    border: 1px solid #18ab29;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+.myButton:hover {
+    background-color:#00E165;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
