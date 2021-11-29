@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Vut To do list</title>
+</head>
+<body>
+
+    <div id="root">
+
+        <header></header>
+        <main>
+            <div class="container">
+                <div class="elementi" v-for='(elementi, index) in list'>
+                    <ul>
+                        <li>
+                            <input  type="checkbox" @click='checked()':class="list.check == 'true' ? 'done' : '' ">
+                            <span>{{elementi.activity}}</span> 
+                            <i class="fas fa-times"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+<!-- Esercizio di oggi: Vue To Do List
+nome repo: vue-todolist
+Descrizione:
+Rifare l'esercizio della to do list.
+Questa volta però ogni todo sarà un oggetto, formato da due proprietà:
+- text, una stringa che indica il testo del todo
+- done, un booleano (true/false) che indica se il todo è stato fatto oppure no
+MILESTONE 1
+Stampare all'interno di una lista, un item per ogni todo.
+Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
+MILESTONE 2
+Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista.
+MILESTONE 3
+Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
+Bonus:
+1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
+2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
+Buon lavoro e buon divertimento! -->
