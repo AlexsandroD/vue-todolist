@@ -33,7 +33,7 @@ const app = new Vue({
     },
     methods: {
         checked: function (index) {
-            if (this.list[index].check == false) {
+            if (this.c == false) {
                 this.list[index].check = true;
             } else {
                 this.list[index].check = false
