@@ -35,7 +35,7 @@
                     <ul>
                         <li>
                             <label class="control control-checkbox">
-                                <input type="checkbox" @click='checked(index)'>
+                                <input type="checkbox" @click='checked(index)' v-model="list[index].check">
                                 <span :class="list[index].check == true ? 'done' : '' ">{{elementi.activity}}</span>
                                 <div class="control_indicator"></div>
                             </label>
